@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+{% load news_load %}
+
+
+<h1 class="text-center mt-3">Found Search Result</h1>
+
+<hr class="p-4">
+
+<div class="container text-center">
+    <div class="row text-center">
+        {% for news in user %}
+
+        <h1>{{news.title}}</h1>
+        <div class="m-auto">
+            <img src="{{news.images.url}}" alt="">
+        </div>
+        <p class="mt-4">{{news.description}}</p>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="container text-center">
+    <div class="row text-center">
+        {% for news in special %}
+
+        <h1>{{news.title}}</h1>
+        <div class="m-auto">
+            <img src="{{news.images.url}}" alt="">
+        </div>
+        <p class="mt-4">{{news.description}}</p>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

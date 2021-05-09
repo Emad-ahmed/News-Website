@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+{% load news_load %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/signup.css' %}">
+
+
+<h1 class="text-center mt-4 mb-2">Signup</h1>
+
+<div class="container">
+    <div class="jumbotron">
+        <form action="" method="post" novalidate>
+            {% csrf_token %}
+            {% for fm in form%}
+            {{fm.label_tag}} {{fm}} {{fm.errors|striptags}} <br> <br>
+            {% endfor %}
+
+            <input type="submit" type="submit">
+        </form>
+    </div>
+</div>
+
+{% endblock %}

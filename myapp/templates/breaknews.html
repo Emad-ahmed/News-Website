@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/newsshow.css' %}">
+
+<div class="container text-center mt-5">
+
+
+
+    <h1> {{mynews.title}}</h1>
+    <img src="{{mynews.images.url}}" alt="" class="mt-2">
+    <p class="mine mt-3">{{mynews.description}}</p>
+
+
+</div>
+
+{% endblock %}
